@@ -6,6 +6,7 @@ import java.util.Date;
 public class Deal {
     
     private int idDeal;
+    private PrestataireDeService prestataireDeService;
     private int quantite;
     private String libelle;
     private String typeDeal;
@@ -40,6 +41,10 @@ public class Deal {
         return idDeal;
     }
 
+    public PrestataireDeService getPrestataireDeService() {
+        return prestataireDeService;
+    }
+    
     public int getQuantite() {
         return quantite;
     }
@@ -87,6 +92,11 @@ public class Deal {
     public void setIdDeal(int idDeal) {
         this.idDeal = idDeal;
     }
+
+    public void setPrestataireDeService(PrestataireDeService prestataireDeService) {
+        this.prestataireDeService = prestataireDeService;
+    }
+    
 
     public void setQuantite(int quantite) {
         this.quantite = quantite;

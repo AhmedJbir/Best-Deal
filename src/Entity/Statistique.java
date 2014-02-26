@@ -6,6 +6,8 @@ import java.util.Date;
 public class Statistique {
     
     private int idStatistique;
+    private Administrateur administrateur;
+    private PrestataireDeService prestataireDeService;
     private Date dateDebut;
     private Date dateFin;
 
@@ -30,6 +32,15 @@ public class Statistique {
         return dateFin;
     }
 
+    public Administrateur getAdministrateur() {
+        return administrateur;
+    }
+
+    public PrestataireDeService getPrestataireDeService() {
+        return prestataireDeService;
+    }
+
+    
     public void setIdStatistique(int idStatistique) {
         this.idStatistique = idStatistique;
     }
@@ -40,6 +51,14 @@ public class Statistique {
 
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
+    }
+
+    public void setAdministrateur(Administrateur administrateur) {
+        this.administrateur = administrateur;
+    }
+
+    public void setPrestataireDeService(PrestataireDeService prestataireDeService) {
+        this.prestataireDeService = prestataireDeService;
     }
     
     

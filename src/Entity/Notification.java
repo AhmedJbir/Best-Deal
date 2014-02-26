@@ -11,12 +11,12 @@ public class Notification {
     private Date dateNotification;
     private String typeNotification;
     private String message;
+    private Deal deal;
 
     public Notification() {
     }
 
-    public Notification(User fromUser, User toUser, Date dateNotification, String typeNotification, String message) {
-        this.fromUser = fromUser;
+    public Notification(User toUser, Date dateNotification, String typeNotification, String message) {
         this.toUser = toUser;
         this.dateNotification = dateNotification;
         this.typeNotification = typeNotification;
@@ -47,6 +47,10 @@ public class Notification {
         return message;
     }
 
+    public Deal getDeal() {
+        return deal;
+    }
+
     public void setIdNotification(int idNotification) {
         this.idNotification = idNotification;
     }
@@ -70,7 +74,10 @@ public class Notification {
     public void setMessage(String message) {
         this.message = message;
     }
-    
+
+    public void setDeal(Deal deal) {
+        this.deal = deal;
+    }
     
     
 }
