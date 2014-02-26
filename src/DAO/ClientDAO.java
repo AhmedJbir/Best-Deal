@@ -64,7 +64,7 @@ public class ClientDAO {
     
     public Client ChercherClient(String login) {
         try {
-            String sql = "SELECT * FROM User WHERE login='" + login + "'";
+            String sql = "SELECT * FROM User WHERE login='" + login + "' AND role='Client'";
             ResultSet rs = crud.exeRead(sql);
             Client c = new Client();
             while (rs.next()) {

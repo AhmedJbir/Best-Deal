@@ -12,17 +12,13 @@ public class PrestataireDeService extends User{
 
     public PrestataireDeService() {
         super();
+        this.statut = 0;
         this.setRole("PrestataireDeService");
     }
 
-    public PrestataireDeService(String societe, String adresse, String descriptif, String logo, int telephone, int statut, String login, String motDePasse) {
+    public PrestataireDeService(String login, String motDePasse) {
         super(login, motDePasse);
-        this.societe = societe;
-        this.adresse = adresse;
-        this.descriptif = descriptif;
-        this.logo = logo;
-        this.telephone = telephone;
-        this.statut = statut;
+        this.statut = 0;
         this.setRole("PrestataireDeService");
     }
 
