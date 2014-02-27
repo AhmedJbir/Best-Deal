@@ -23,19 +23,19 @@ public class ClientDAO {
     public boolean AjouterClient(Client c) {
          String sql =
                 "INSERT INTO User (login,motDePasse,nom,prenom,adresse,telephone,sexe,DateDeNaissance,Role) VALUES ('"+c.getLogin()+"','"+MD5.md5Java(c.getMotDePasse())+"','"+c.getNom()+"','"+c.getPrenom()+"','"+c.getAdresse()+"','"+c.getTelephone()+"','"+c.getSexe()+"','"+c.getDateDeNaissance()+"','"+c.getRole()+"')";
-        return crud.exeCreate(sql);
+        return crud.execute(sql);
     }
 
     public boolean ModifierClient (Client c,  String login) {
         String sql =
                 "UPDATE User SET login='"+c.getLogin()+"', motDePasse='"
                 +MD5.md5Java(c.getMotDePasse())+"', nom='"+c.getNom()+"', prenom='"+c.getPrenom()+"', adresse='"+c.getAdresse()+"', telephone='"+c.getTelephone()+"', dateDeNaissance='"+c.getDateDeNaissance()+"' WHERE login='"+login+"'";
-        return crud.exeUpdate(sql);
+        return crud.execute(sql);
     }
 
     public boolean SupprimerClient(String login) {
         String sql = "DELETE FROM User WHERE login='"+login+"'";
-        return crud.exeDelete(sql);
+        return crud.execute(sql);
     }
 
     public List<Client> ListerClients() {

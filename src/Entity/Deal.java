@@ -4,9 +4,9 @@ import java.util.Date;
 
 
 public class Deal {
-    
+
     private int idDeal;
-    private PrestataireDeService prestataireDeService;
+    private PrestataireDeService prestataireDeService;   //On en a besoin pour avoir l'idPrestataireDeService ( clé étrangère ).
     private int quantite;
     private String libelle;
     private String typeDeal;

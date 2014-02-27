@@ -22,19 +22,19 @@ public class PrestataireDeServiceDAO {
     public boolean AjouterPrestataireDeService(PrestataireDeService ps) {
          String sql =
                 "INSERT INTO User (login,motDePasse,adresse,descriptif,societe,logo,telephone,role,statut) VALUES ('"+ps.getLogin()+"','"+MD5.md5Java(ps.getMotDePasse())+"','"+ps.getAdresse()+"','"+ps.getDescriptif()+"','"+ps.getSociete()+"','"+ps.getLogo()+"','"+ps.getTelephone()+"','"+ps.getRole()+"','"+ps.getStatut()+"')";
-        return crud.exeCreate(sql);
+        return crud.execute(sql);
     }
 
     public boolean ModifierPrestataireDeService(PrestataireDeService ps,  String login) {
         String sql =
                 "UPDATE User SET login='"+ps.getLogin()+"', motDePasse='"
                 +MD5.md5Java(ps.getMotDePasse())+"', adresse='"+ps.getAdresse()+"', descriptif='"+ps.getDescriptif()+"',telephone='"+ps.getTelephone()+"', societe='"+ps.getSociete()+"', logo='"+ps.getLogo()+"' WHERE login='"+login+"'";
-        return crud.exeUpdate(sql);
+        return crud.execute(sql);
     }
 
-    public boolean SupprimerPrestataireDeService(PrestataireDeService ps) {
-        String sql = "DELETE FROM User WHERE login='"+ps.getLogin()+"' AND role='PrestataireDeService'";
-        return crud.exeDelete(sql);
+    public boolean SupprimerPrestataireDeService(String login) {
+        String sql = "DELETE FROM User WHERE login='"+login+"' AND role='PrestataireDeService'";
+        return crud.execute(sql);
     }
 
     public List<PrestataireDeService> ListerPrestatairesDeService() {
@@ -70,7 +70,7 @@ public class PrestataireDeServiceDAO {
                 p.setAdresse(rs.getString("adresse"));
                 p.setDescriptif(rs.getString("descriptif"));
                 p.setTelephone(rs.getInt("telephone"));
-                p.setSociete(rs.getString("socoiete"));
+                p.setSociete(rs.getString("societe"));
                 p.setLogo(rs.getString("logo"));
                 ;
             }

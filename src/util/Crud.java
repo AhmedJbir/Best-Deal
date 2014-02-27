@@ -11,29 +11,7 @@ public class Crud {
     
     MyConnection mc = MyConnection.getInstance();
 
-    public boolean exeCreate(String sql){
-        try {
-            Statement statement = mc.getConnection().createStatement();
-            statement.executeUpdate(sql);
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(Crud.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
-    public boolean exeUpdate(String sql){
-        try {
-            Statement statement = mc.getConnection().createStatement();
-            statement.executeUpdate(sql);
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(Crud.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
-    public boolean exeDelete(String sql){
+    public boolean execute(String sql){
         try {
             Statement statement = mc.getConnection().createStatement();
             statement.executeUpdate(sql);
