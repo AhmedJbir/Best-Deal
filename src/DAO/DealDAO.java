@@ -32,10 +32,10 @@ public class DealDAO {
         return crud.execute(sql);
     }
 
-    public boolean ModifierDeal(Deal d,int idDeal) {
+    public boolean ModifierDeal(Deal d) {
         String sql =
                 "UPDATE deal SET libelle='"+d.getLibelle()+"', categorie='"
-                +d.getCategorie()+"', typeDeal='"+d.getTypeDeal()+"', image='"+d.getImage()+"',dateDebut='"+d.getDateDebut()+"', dateFin='"+d.getDateFin()+"' , prixInitial='"+d.getPrixInitial()+"', prixPromotionelle='"+d.getPrixPromotionnel()+"',quantite='"+d.getQuantite()+"' WHERE idDeal='"+d.getIdDeal()+"'";
+                +d.getCategorie()+"', typeDeal='"+d.getTypeDeal()+"', image='"+d.getImage()+"',dateDebut='"+d.getDateDebut()+"', dateFin='"+d.getDateFin()+"' , prixInitial='"+d.getPrixInitial()+"', prixPromotionnel='"+d.getPrixPromotionnel()+"',quantite='"+d.getQuantite()+"' WHERE iddeal='"+d.getIdDeal()+"'" ;
         return crud.execute(sql);
     }
 
@@ -45,7 +45,8 @@ public class DealDAO {
     }
 
     public List<Deal> ListerDeals() {
-        PrestataireDeService p = new PrestataireDeService();
+
+        PrestataireDeServiceDAO psdao = new PrestataireDeServiceDAO();
         try {
             String sql = "SELECT * FROM Deal ";
             ResultSet rs = crud.exeRead(sql);
@@ -57,15 +58,14 @@ public class DealDAO {
                 d.setLibelle(rs.getString("libelle"));
                 d.setCategorie(rs.getString("categorie"));
                 d.setTypeDeal(rs.getString("typeDeal"));
-                d.setDateDebut(rs.getDate("dateDebut"));
-                d.setDateFin(rs.getDate("dateFin"));
+                d.setDateDebut(rs.getString("dateDebut"));
+                d.setDateFin(rs.getString("dateFin"));
                 d.setImage(rs.getString("image"));
                 d.setPrixInitial(rs.getDouble("prixInitial"));
-                d.setPrixPromotionnel(rs.getDouble("prixPromotionelle"));
+                d.setPrixPromotionnel(rs.getDouble("prixPromotionnel"));
                 d.setQuantite(rs.getInt("quantite"));
                 d.setStatut(rs.getInt("statut"));
-                p.setIdUser(rs.getInt("idUser"));
-                d.setPrestataireDeService(p);
+                d.setPrestataireDeService(psdao.ChercherPrestataireDeService(rs.getInt("idUser")));
                 liste.add(d);
             }
             return liste;
@@ -76,7 +76,8 @@ public class DealDAO {
     }
 
     
-    public Deal Recherchelogin(int idDeal) {
+    public Deal RechercheParId(int idDeal) {
+        PrestataireDeServiceDAO psdao = new PrestataireDeServiceDAO();
         try {
             String sql = "SELECT * FROM deal WHERE idDeal='" + idDeal + "'";
             ResultSet rs = crud.exeRead(sql);
@@ -86,12 +87,17 @@ public class DealDAO {
                 d.setLibelle(rs.getString("libelle"));
                 d.setCategorie(rs.getString("categorie"));
                 d.setTypeDeal(rs.getString("typeDeal"));
-                d.setDateDebut(rs.getDate("dateDebut"));
-                d.setDateFin(rs.getDate("dateFin"));
+                d.setDateDebut(rs.getString("dateDebut"));
+                d.setDateFin(rs.getString("dateFin"));
                 d.setImage(rs.getString("image"));
                 d.setPrixInitial(rs.getDouble("prixInitial"));
-                d.setPrixPromotionnel(rs.getDouble("prixPromotionelle"));
+                d.setPrixPromotionnel(rs.getDouble("prixPromotionnel"));
                 d.setQuantite(rs.getInt("quantite"));;
+                d.setStatut(rs.getInt("statut"));
+                d.setPrestataireDeService(psdao.ChercherPrestataireDeService(rs.getInt("idUser")));
+                
+                
+                
             }
             return d;
 
@@ -100,7 +106,8 @@ public class DealDAO {
             return null;
         }
     }
-     public List<Deal> rechercherParCategorie( String categorie) {
+     public List<Deal> rechercherParCategorie(String categorie) {
+         PrestataireDeServiceDAO psdao = new PrestataireDeServiceDAO();
         try {
             String sql = "SELECT * FROM Deal Where categorie='"+categorie+"' ";
             ResultSet rs = crud.exeRead(sql);
@@ -111,12 +118,14 @@ public class DealDAO {
                 d.setLibelle(rs.getString("libelle"));
                 d.setCategorie(rs.getString("categorie"));
                 d.setTypeDeal(rs.getString("typeDeal"));
-                d.setDateDebut(rs.getDate("dateDebut"));
-                d.setDateFin(rs.getDate("dateFin"));
+                d.setDateDebut(rs.getString("dateDebut"));
+                d.setDateFin(rs.getString("dateFin"));
                 d.setImage(rs.getString("image"));
                 d.setPrixInitial(rs.getDouble("prixInitial"));
-                d.setPrixPromotionnel(rs.getDouble("prixPromotionelle"));
-                d.setQuantite(rs.getInt("quantite"));
+                d.setPrixPromotionnel(rs.getDouble("prixPromotionnel"));
+                d.setQuantite(rs.getInt("quantite"));;
+                d.setStatut(rs.getInt("statut"));
+                d.setPrestataireDeService(psdao.ChercherPrestataireDeService(rs.getInt("idUser")));
                 liste.add(d);
             }
             return liste;

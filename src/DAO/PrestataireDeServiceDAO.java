@@ -82,4 +82,26 @@ public class PrestataireDeServiceDAO {
         }
     }
     
+    public PrestataireDeService ChercherPrestataireDeService(int idPrestataireDeService) {
+        try {
+            String sql = "SELECT * FROM User WHERE idUser='" + idPrestataireDeService + "' AND role='PrestataireDeService'";
+            ResultSet rs = crud.exeRead(sql);
+            PrestataireDeService p= new PrestataireDeService();
+            while (rs.next()) {
+               p.setLogin(rs.getString("login"));
+                p.setAdresse(rs.getString("adresse"));
+                p.setDescriptif(rs.getString("descriptif"));
+                p.setTelephone(rs.getInt("telephone"));
+                p.setSociete(rs.getString("societe"));
+                p.setLogo(rs.getString("logo"));
+                ;
+            }
+            return p;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.PrestataireDeServiceDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
 }

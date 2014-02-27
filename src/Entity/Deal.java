@@ -13,8 +13,8 @@ public class Deal {
     private String categorie;
     private String descriptif;
     private String image;
-    private Date dateDebut;
-    private Date dateFin;
+    private String dateDebut;
+    private String dateFin;
     private Double prixInitial;
     private Double prixPromotionnel;
     private int Statut;    // Quand un Prestataire de service ajoute un deal, le deal aura un statut 0, quand l'administrateur valide le deal, il aura la valeur 1.
@@ -22,7 +22,7 @@ public class Deal {
     public Deal() {
     }
 
-    public Deal(int idDeal, int quantite, String libelle, String typeDeal, String categorie, String descriptif, String image, Date dateDebut, Date dateFin, Double prixInitial, Double prixPromotionnel, int Statut) {
+    public Deal(int idDeal, int quantite, String libelle, String typeDeal, String categorie, String descriptif, String image, String dateDebut, String dateFin, Double prixInitial, Double prixPromotionnel, int Statut) {
         this.idDeal = idDeal;
         this.quantite = quantite;
         this.libelle = libelle;
@@ -69,11 +69,11 @@ public class Deal {
         return image;
     }
 
-    public Date getDateDebut() {
+    public String getDateDebut() {
         return dateDebut;
     }
 
-    public Date getDateFin() {
+    public String getDateFin() {
         return dateFin;
     }
 
@@ -122,11 +122,11 @@ public class Deal {
         this.image = image;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(String dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(String dateFin) {
         this.dateFin = dateFin;
     }
 
