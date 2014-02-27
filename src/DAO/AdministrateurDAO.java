@@ -20,19 +20,19 @@ public class AdministrateurDAO {
     public boolean AjouterAdministrateur(Administrateur a) {
          String sql =
                 "INSERT INTO User (login,motDePasse,nom,prenom,telephone,role) VALUES ('"+a.getLogin()+"','"+MD5.md5Java(a.getMotDePasse())+"','"+a.getNom()+"','"+a.getPrenom()+"','"+a.getTelephone()+"','"+a.getRole()+"')";
-        return crud.exeCreate(sql);
+        return crud.execute(sql);
     }
 
     public boolean ModifierAdministrateur(Administrateur a,  String login) {
         String sql =
                 "UPDATE User SET login='"+a.getLogin()+"', motDePasse='"
                 +MD5.md5Java(a.getMotDePasse())+"', nom='"+a.getNom()+"', prenom='"+a.getPrenom()+"',telephone='"+a.getTelephone()+"' WHERE login='"+login+"'";
-        return crud.exeUpdate(sql);
+        return crud.execute(sql);
     }
 
     public boolean SupprimerAdministrateur(String login) {
         String sql = "DELETE FROM User WHERE login='"+login+"'";
-        return crud.exeDelete(sql);
+        return crud.execute(sql);
     }
 
     public List<Administrateur> ListerAdministrateurs() {
