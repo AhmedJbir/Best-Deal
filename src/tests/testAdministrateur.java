@@ -15,19 +15,22 @@ import java.util.List;
 public class testAdministrateur {
     
     public static void main(String args[]){
-//    Administrateur admin=new Administrateur("loggg", "pwwwd");
-//    admin.setNom("ad");
-//    admin.setPrenom("euhlol");
-//    admin.setTelephone(158);
+    Administrateur admin=new Administrateur("log", "pwd");
+    admin.setNom("admin");
+   admin.setPrenom("ma3andouch");
+    admin.setTelephone(1595659);
     AdministrateurDAO admindao =new AdministrateurDAO();
-//    //test ajout réussi
-  //  admindao.AjouterAdministrateur(admin);
+    AdministrateurDAO admindao1 =new AdministrateurDAO();
+    //test ajout réussi
+    admindao.AjouterAdministrateur(admin);
+    admindao1.AjouterAdministrateur(admin);
 //    // test update réussi
-//    admin.setNom("nomjdid");
-//    admindao.ModifierAdministrateur(admin, "log");
+   //admin.setNom("nomjdid");
+    //admindao.ModifierAdministrateur(admin, "log");
         // test delete réussi 
-   //     System.out.println(admindao.SupprimerAdministrateur("log"));
-    
+     //System.out.println(admindao.SupprimerAdministrateur("log"));
+    System.out.println(admindao.ChercherAdministrateur("log").toString());
+    System.out.println(admindao.ListerAdministrateurs().toString());
 //    List<Administrateur> l = admindao.ListerAdministrateurs();
 //    
 //    for (int i=0; i< l.size();i++)
