@@ -41,6 +41,11 @@ public class Administrateur extends User{
     public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
+
+    @Override
+    public String toString() {
+        return "Administrateur{" + "nom=" + nom + ", prenom=" + prenom + ", telephone=" + telephone + '}';
+    }
     
     
         
