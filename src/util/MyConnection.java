@@ -14,7 +14,7 @@ public class MyConnection {
      */
     private String url = "jdbc:mysql://localhost:3306/bestdeal";
     private String login = "root";
-    private String pwd = "root";
+    private String pwd = "";
     private static MyConnection instance;
     public static Connection connection;
 

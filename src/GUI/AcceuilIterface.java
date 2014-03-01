@@ -30,7 +30,7 @@ public class AcceuilIterface extends javax.swing.JFrame {
     public AcceuilIterface() {
         initComponents();
         
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\jamel\\Downloads\\Blocks-Background.jpg");//vous devez mettre le chemin de l'image sur votre pc
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\Khalil\\Desktop\\block.jpg");//vous devez mettre le chemin de l'image sur votre pc
         Image image = imageIcon.getImage(); // transform it 
         Image newimg = image.getScaledInstance(1090, 650,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
         jImage.setText("");
@@ -99,22 +99,22 @@ public class AcceuilIterface extends javax.swing.JFrame {
         jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, 20));
 
         Jpaneldessus.setBackground(new java.awt.Color(51, 51, 51));
-        Jpaneldessus.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        Jpaneldessus.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Jpaneldessus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(Jpaneldessus, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1070, 140));
 
         jPanel2.setBackground(new java.awt.Color(255, 134, 19));
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, 20));
 
         jPanel4.setBackground(new java.awt.Color(102, 212, 67));
-        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 200, 240, 20));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -130,7 +130,7 @@ public class AcceuilIterface extends javax.swing.JFrame {
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 400, 340));
 
         jPanelleft.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelleft.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanelleft.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanelleftLayout = new javax.swing.GroupLayout(jPanelleft);
         jPanelleft.setLayout(jPanelleftLayout);
@@ -146,7 +146,7 @@ public class AcceuilIterface extends javax.swing.JFrame {
         jPanel3.add(jPanelleft, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 300, 420));
 
         jPanelright.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelright.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        jPanelright.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanelrightLayout = new javax.swing.GroupLayout(jPanelright);
         jPanelright.setLayout(jPanelrightLayout);
@@ -161,7 +161,6 @@ public class AcceuilIterface extends javax.swing.JFrame {
 
         jPanel3.add(jPanelright, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 240, -1));
 
-        jImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Background.jpg"))); // NOI18N
         jImage.setOpaque(true);
         jPanel3.add(jImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
